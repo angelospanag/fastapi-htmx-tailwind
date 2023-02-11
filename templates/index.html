@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', path='dist/output.css') }}"/>
+    <script src="{{ url_for('static', path='js/htmx.min.js') }}"></script>
+</head>
+<body>
+{% include "header.html" %}
+<ul id="tabs" hx-swap="innerHTML" hx-get="/tab1" hx-target="#tabs" hx-trigger="load delay:100ms"></ul>
+</body>
+</html>
