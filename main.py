@@ -15,7 +15,7 @@ app = FastAPI()
 
 # Faker
 locales = OrderedDict([
-    ('en-UK', 1),
+    ('el', 1),
 ])
 fake = Faker(locales)
 
@@ -47,13 +47,11 @@ async def tab2(request: Request):
     ]
     # df = pd.DataFrame(people)
     # return templates.TemplateResponse(
-    #     "tab2.html", {"request": request, "data": df.to_dict("records")}
+    #     "tab2.html", {"request": request, "columns": df.columns, "data": df.to_dict("records")}
     # )
-
     df = pl.DataFrame(people)
-    print(df.to_dicts())
     return templates.TemplateResponse(
-        "tab2.html", {"request": request, "data": df.to_dicts()}
+        "tab2.html", {"request": request, "columns": df.columns, "data": df.to_dicts()}
     )
 
 
