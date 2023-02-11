@@ -1,18 +1,27 @@
 import pathlib
 import random
-import string
+from collections import OrderedDict
 
-import pandas as pd
+import polars as pl
+from faker import Faker
+# import pandas as pd
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
+# FastAPI
 app = FastAPI()
 
+# Faker
+locales = OrderedDict([
+    ('en-UK', 1),
+])
+fake = Faker(locales)
+
+# Static assets path
 BASE_DIR = pathlib.Path.cwd()
 app.mount("/static", StaticFiles(directory=BASE_DIR / "static"), name="static")
-
 templates = Jinja2Templates(directory=BASE_DIR / "templates")
 
 
@@ -26,24 +35,25 @@ async def tab1(request: Request):
     return templates.TemplateResponse("tab1.html", {"request": request})
 
 
-def random_string(length):
-    letters = string.ascii_letters
-    return "".join(random.choice(letters) for i in range(length))
-
-
 @app.get("/tab2", response_class=HTMLResponse)
 async def tab2(request: Request):
     people = [
         {
-            "Name": random_string(10),
+            "Name": fake.name(),
             "Age": random.randint(20, 70),
-            "City": random_string(15),
+            "Address": fake.address(),
         }
-        for _ in range(1000)
+        for _ in range(50)
     ]
-    df = pd.DataFrame(people)
+    # df = pd.DataFrame(people)
+    # return templates.TemplateResponse(
+    #     "tab2.html", {"request": request, "data": df.to_dict("records")}
+    # )
+
+    df = pl.DataFrame(people)
+    print(df.to_dicts())
     return templates.TemplateResponse(
-        "tab2.html", {"request": request, "data": df.to_dict("records")}
+        "tab2.html", {"request": request, "data": df.to_dicts()}
     )
 
 

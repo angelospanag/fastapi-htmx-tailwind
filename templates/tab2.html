@@ -58,15 +58,15 @@
     <table>
         <thead class="border-b">
         <tr>
-            <th scope="col" class="-rotate-45 text-sm  font-medium text-gray-900 px-6 py-4 text-left">
+            <th scope="col" class="text-sm  font-medium text-gray-900 px-6 py-4 text-left">
                 Name
             </th>
-            <th scope="col" class="-rotate-45 text-sm font-medium text-gray-900 px-6 py-4 text-left">
+            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                 Age
             </th>
             <th scope="col"
-                class="-rotate-45 text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                City
+                class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                Address
             </th>
         </tr>
         </thead>
@@ -86,7 +86,7 @@
                     </td>
                 {% endif %}
                 <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                    {{ person.City }}
+                    {{ person.Address }}
                 </td>
             </tr>
         {% endfor %}
