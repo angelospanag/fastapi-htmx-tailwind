@@ -15,7 +15,7 @@ app = FastAPI()
 
 # Faker
 locales = OrderedDict([
-    ('el', 1),
+    ('en', 1),
 ])
 fake = Faker(locales)
 
