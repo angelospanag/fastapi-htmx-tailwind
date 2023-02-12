@@ -1,67 +1,24 @@
-<ul class="nav nav-tabs flex flex-col md:flex-row flex-wrap list-none border-b-0 pl-0 mb-4" id="tabs-tab"
-    role="tablist">
-    <li class="nav-item" role="presentation">
-        <a hx-get="/tab1" class="
-      nav-link
-      block
-      font-medium
-      text-xs
-      leading-tight
-      uppercase
-      border-x-0 border-t-0 border-b-2 border-transparent
-      px-6
-      py-3
-      my-2
-      hover:border-transparent hover:bg-green-500
-      focus:border-transparent
-    " id="tabs-home-tab" data-bs-toggle="pill" data-bs-target="#tabs-home" role="tab" aria-controls="tabs-home"
-           aria-selected="true">Home</a>
-    </li>
-    <li class="nav-item" role="presentation">
-        <a hx-get="/tab2" class="
-      nav-link
-      block
-      font-medium
-      text-xs
-      leading-tight
-      uppercase
-      border-x-0 border-t-0 border-b-2 border-transparent
-      px-6
-      py-3
-      my-2
-      hover:border-transparent hover:bg-green-500
-      focus:border-transparent
-      active
-      selected
-    " id="tabs-profile-tab" data-bs-toggle="pill" data-bs-target="#tabs-profile" role="tab"
-           aria-controls="tabs-profile" aria-selected="false">Profile</a>
-    </li>
-    <li class="nav-item" role="presentation">
-        <a hx-get="/tab3" class="
-      nav-link
-      block
-      font-medium
-      text-xs
-      leading-tight
-      uppercase
-      border-x-0 border-t-0 border-b-2 border-transparent
-      px-6
-      py-3
-      my-2
-      hover:border-transparent hover:bg-green-500
-      focus:border-transparent
-    " id="tabs-messages-tab" data-bs-toggle="pill" data-bs-target="#tabs-messages" role="tab"
-           aria-controls="tabs-messages" aria-selected="false">Messages</a>
-    </li>
-</ul>
-<div>
-    <input type="text" id="filter-by" onkeyup="filterByName()" placeholder="Search name">
+<div class="tab-list">
+    <a hx-get="/tab1"
+       class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300">Profile</a>
+    <a hx-get="/tab2"
+       class="inline-block p-4 text-blue-600 border-b-2 border-blue-600 rounded-t-lg active dark:text-blue-500 dark:border-blue-500"
+       aria-current="page">Dashboard</a>
+    <a hx-get="/tab3"
+       class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300">Settings</a>
+</div>
+<div class="flex flex-col">
+
+    <label for="helper-text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+    <input type="text" id="filter-by" onkeyup="filterByName()"
+           placeholder="Search name"
+           class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
     <table id="name-table">
         <thead class="border-b">
         <tr>
             {% for column in columns %}
                 <th scope="col" class="text-sm  font-medium text-gray-900 px-6 py-4 text-left">
-                    {{ column }}
+                    {{ column | upper }}
                 </th>
             {% endfor %}
         </tr>

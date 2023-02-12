@@ -1,56 +1,12 @@
-<ul class="nav nav-tabs flex flex-col md:flex-row flex-wrap list-none border-b-0 pl-0 mb-4">
-    <li class="nav-item" role="presentation">
-        <a hx-get="/tab1" class="
-      nav-link
-      block
-      font-medium
-      text-xs
-      leading-tight
-      uppercase
-      border-x-0 border-t-0 border-b-2 border-transparent
-      px-6
-      py-3
-      my-2
-      hover:border-transparent hover:bg-green-500
-      focus:border-transparent
-      active
-      selected
-    " id="tabs-home-tab" data-bs-toggle="pill" data-bs-target="#tabs-home" role="tab" aria-controls="tabs-home"
-           aria-selected="true">Home</a>
-    </li>
-    <li>
-        <a hx-get="/tab2" class="
-      nav-link
-      block
-      font-medium
-      text-xs
-      leading-tight
-      uppercase
-      border-x-0 border-t-0 border-b-2 border-transparent
-      px-6
-      py-3
-      my-2
-      hover:border-transparent hover:bg-green-500
-      focus:border-transparent
-    ">Profile</a>
-    </li>
-    <li>
-        <a hx-get="/tab3" class="
-      nav-link
-      block
-      font-medium
-      text-xs
-      leading-tight
-      uppercase
-      border-x-0 border-t-0 border-b-2 border-transparent
-      px-6
-      py-3
-      my-2
-      hover:border-transparent hover:bg-green-500
-      focus:border-transparent
-    ">Messages</a>
-    </li>
-</ul>
+<div class="tab-list">
+    <a hx-get="/tab1"
+       class="inline-block p-4 text-blue-600 border-b-2 border-blue-600 rounded-t-lg active dark:text-blue-500 dark:border-blue-500"
+       aria-current="page">Profile</a>
+    <a hx-get="/tab2"
+       class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300">Dashboard</a>
+    <a hx-get="/tab3"
+       class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300">Settings</a>
+</div>
 <div>
     Tab 1 content
 </div>
