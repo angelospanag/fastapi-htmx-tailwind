@@ -1,7 +1,8 @@
 
 ## TailwindCSS watcher
 ```
-tailwindcss -i ./static/css/input.css -o ./static/dist/output.css --watch
+cd ui/static
+npx tailwindcss -i ./css/input.css -o ./dist/output.css --watch
 ```
 
 ## Run server

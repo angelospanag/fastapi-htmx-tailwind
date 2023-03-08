@@ -4,6 +4,7 @@ from collections import OrderedDict
 
 import polars as pl
 from faker import Faker
+
 # import pandas as pd
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
@@ -14,15 +15,17 @@ from fastapi.templating import Jinja2Templates
 app = FastAPI()
 
 # Faker
-locales = OrderedDict([
-    ('en', 1),
-])
+locales = OrderedDict(
+    [
+        ("en", 1),
+    ]
+)
 fake = Faker(locales)
 
 # Static assets path
 BASE_DIR = pathlib.Path.cwd()
-app.mount("/static", StaticFiles(directory=BASE_DIR / "static"), name="static")
-templates = Jinja2Templates(directory=BASE_DIR / "templates")
+app.mount("/static", StaticFiles(directory=BASE_DIR / "ui" / "static"), name="static")
+templates = Jinja2Templates(directory=BASE_DIR / "ui" / "templates")
 
 
 @app.get("/", response_class=HTMLResponse)
