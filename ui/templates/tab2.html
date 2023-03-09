@@ -1,43 +1,39 @@
-<div class="tab-list">
+<div class="tabs">
     <a hx-get="/tab1"
-       class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300">Profile</a>
+       class="tab tab-bordered">Profile</a>
     <a hx-get="/tab2"
-       class="inline-block p-4 text-blue-600 border-b-2 border-blue-600 rounded-t-lg active dark:text-blue-500 dark:border-blue-500"
+       class="tab tab-bordered tab-active"
        aria-current="page">Dashboard</a>
     <a hx-get="/tab3"
-       class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300">Settings</a>
+       class="tab tab-bordered">Settings</a>
 </div>
 <div class="flex flex-col">
-    <label for="helper-text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
-    <input type="text" id="filter-by" onkeyup="filterByName()"
-           placeholder="Search name"
-           class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-    <table id="name-table">
-        <thead class="border-b">
+    <input type="text" id="filter-by" class="input input-bordered w-full max-w-xs" onkeyup="filterByName()"
+           placeholder="Search name">
+    <table class="table w-full" id="name-table">
+        <thead>
         <tr>
             {% for column in columns %}
-                <th scope="col" class="text-sm  font-medium text-gray-900 px-6 py-4 text-left">
-                    {{ column | upper }}
-                </th>
+                <th>{{ column | upper }}</th>
             {% endfor %}
         </tr>
         </thead>
         <tbody class="sortable">
         {% for person in data %}
-            <tr class="bg-white border-b">
-                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+            <tr>
+                <td>
                     {{ person.Name }}
                 </td>
                 {% if person.Age > 50 %}
-                    <td class="bg-red-500 text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                    <td class="bg-red-500 text-white">
                         {{ person.Age }}
                     </td>
                 {% else %}
-                    <td class="bg-green-500 ext-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                    <td class="bg-green-500 text-white">
                         {{ person.Age }}
                     </td>
                 {% endif %}
-                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                <td>
                     {{ person.Address }}
                 </td>
             </tr>

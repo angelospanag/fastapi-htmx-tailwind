@@ -9,11 +9,7 @@
 </head>
 <body>
 {% include "header.html" %}
-<div id="tabs"
-     class="text-sm font-medium text-center text-gray-500  dark:text-gray-400"
-     hx-swap="innerHTML" hx-get="/tab1" hx-target="#tabs"
-     hx-trigger="load delay:100ms">
-</div>
+<div id="tab-group" class="text-center" hx-swap="innerHTML" hx-get="/tab1" hx-target="#tab-group" hx-trigger="load delay:100ms"></div>
 <script>
     htmx.onLoad(function (content) {
         var sortables = content.querySelectorAll(".sortable");

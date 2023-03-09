@@ -1,11 +1,11 @@
-<div class="tab-list">
-    <a hx-get="/tab1"
-       class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300">Profile</a>
-    <a hx-get="/tab2"
-       class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300">Dashboard</a>
-    <a hx-get="/tab3"
-       class="inline-block p-4 text-blue-600 border-b-2 border-blue-600 rounded-t-lg active dark:text-blue-500 dark:border-blue-500"
-       aria-current="page">Settings</a>
+<div class="tabs">
+   <a hx-get="/tab1"
+      class="tab tab-bordered">Profile</a>
+   <a hx-get="/tab2"
+      class="tab tab-bordered"
+      aria-current="page">Dashboard</a>
+   <a hx-get="/tab3" 
+      class="tab tab-bordered tab-active">Settings</a>
 </div>
 <div>
     Tab 3 content
