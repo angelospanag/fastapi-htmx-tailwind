@@ -15,6 +15,8 @@ Experimenting rendering tabs using FastAPI and HTMX.
 
 ### 1. Install runtimes
 
+**MacOS using brew**
+
 ```bash
 brew install python@3.13 uv node@22
 ```
