@@ -1,25 +1,16 @@
-[tool.poetry]
+[project]
 name = "fastapi-htmx-tailwind"
 version = "0.1.0"
-description = ""
-authors = ["Angelos Panagiotopoulos <angelospanag@protonmail.com>"]
+description = "Experimenting rendering tabs using FastAPI and HTMX"
 readme = "README.md"
-packages = [{ include = "fastapi_htmx_tailwind" }]
+requires-python = ">=3.13"
+dependencies = [
+    "faker>=37.1.0",
+    "fastapi[standard]>=0.115.12",
+    "jinja2>=3.1.6",
+    "pandas>=2.2.3",
+    "polars>=1.27.1",
+]
 
-[tool.poetry.dependencies]
-python = "^3.11"
-fastapi = "^0.94.0"
-uvicorn = { extras = ["standard"], version = "^0.21.0" }
-jinja2 = "^3.1.2"
-pandas = "^1.5.3"
-faker = "^17.6.0"
-polars = "^0.16.12"
-
-
-[tool.poetry.group.dev.dependencies]
-black = { extras = ["d"], version = "^23.1.0" }
-ruff = "^0.0.254"
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+[dependency-groups]
+dev = ["ruff>=0.11.5"]
