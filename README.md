@@ -47,7 +47,7 @@ npx tailwindcss -i ./css/input.css -o ./dist/output.css --watch
 
 ```bash
 source .venv/bin/activate
-uvicorn main:app --reload
+fastapi dev main.py
 ```
 
 The example should run on http://127.0.0.1:8000

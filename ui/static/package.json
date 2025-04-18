@@ -10,8 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "daisyui": "^2.51.3",
-    "htmx.org": "^1.8.6",
-    "sortablejs": "^1.15.0",
+    "htmx.org": "^1.9.12",
+    "sortablejs": "^1.15.6",
     "tailwindcss": "^3.2.7"
   }
 }
