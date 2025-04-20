@@ -1,6 +1,9 @@
 [project]
 name = "fastapi-htmx-tailwind"
 version = "0.1.0"
+authors = [
+    { name = "Angelos Panagiotopoulos", email = "angelospanag@protonmail.com" }
+]
 description = "Experimenting rendering tabs using FastAPI and HTMX"
 readme = "README.md"
 requires-python = ">=3.13"
