@@ -2,7 +2,7 @@
 name = "fastapi-htmx-tailwind"
 version = "0.1.0"
 authors = [
-    { name = "Angelos Panagiotopoulos", email = "angelospanag@protonmail.com" }
+    { name = "Angelos Panagiotopoulos", email = "angelospanag@protonmail.com" },
 ]
 description = "Experimenting rendering tabs using FastAPI and HTMX"
 readme = "README.md"
@@ -11,7 +11,6 @@ dependencies = [
     "faker>=37.1.0",
     "fastapi[standard]>=0.115.12",
     "jinja2>=3.1.6",
-    "pandas>=2.2.3",
     "polars>=1.27.1",
 ]
 

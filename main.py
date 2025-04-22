@@ -4,8 +4,6 @@ from collections import OrderedDict
 
 import polars as pl
 from faker import Faker
-
-# import pandas as pd
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
@@ -48,10 +46,7 @@ async def tab2(request: Request):
         }
         for _ in range(50)
     ]
-    # df = pd.DataFrame(people)
-    # return templates.TemplateResponse(
-    #     "tab2.html", {"request": request, "columns": df.columns, "data": df.to_dict("records")}
-    # )
+
     df = pl.DataFrame(people)
     return templates.TemplateResponse(
         "tab2.html", {"request": request, "columns": df.columns, "data": df.to_dicts()}
