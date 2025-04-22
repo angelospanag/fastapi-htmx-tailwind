@@ -9,7 +9,7 @@ Experimenting rendering tabs using FastAPI and HTMX.
     * [2. Install Python dependencies](#2-install-python-dependencies)
     * [3. Install Node dependencies](#3-install-node-dependencies)
   * [Run example](#run-example)
-    * [Run the TailwindCSS watcher](#run-the-tailwindcss-watcher)
+    * [Build CSS](#build-css)
     * [Run development server](#run-development-server)
     * [Run production server](#run-production-server)
 <!-- TOC -->
@@ -39,7 +39,7 @@ npm install
 
 ## Run example
 
-### Run the TailwindCSS watcher
+### Build CSS
 
 ```bash
 cd ui/static
