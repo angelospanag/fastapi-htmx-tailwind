@@ -2,14 +2,17 @@
 
 Experimenting rendering tabs using FastAPI and HTMX.
 
-- [fastapi-htmx-tailwind](#fastapi-htmx-tailwind)
-  - [Prerequisites](#prerequisites)
-    - [1. Install runtimes](#1-install-runtimes)
-    - [2. Install Python dependencies](#2-install-python-dependencies)
-    - [3. Install Node dependencies](#3-install-node-dependencies)
-  - [Run example](#run-example)
-    - [Run the TailwindCSS watcher](#run-the-tailwindcss-watcher)
-    - [Run backend server](#run-backend-server)
+<!-- TOC -->
+* [fastapi-htmx-tailwind](#fastapi-htmx-tailwind)
+  * [Prerequisites](#prerequisites)
+    * [1. Install runtimes](#1-install-runtimes)
+    * [2. Install Python dependencies](#2-install-python-dependencies)
+    * [3. Install Node dependencies](#3-install-node-dependencies)
+  * [Run example](#run-example)
+    * [Run the TailwindCSS watcher](#run-the-tailwindcss-watcher)
+    * [Run development server](#run-development-server)
+    * [Run production server](#run-production-server)
+<!-- TOC -->
 
 ## Prerequisites
 
@@ -40,14 +43,19 @@ npm install
 
 ```bash
 cd ui/static
-npx tailwindcss -i ./css/input.css -o ./dist/output.css --watch
+npm run build:css
 ```
 
-### Run backend server
+### Run development server
 
 ```bash
-source .venv/bin/activate
-fastapi dev main.py
+uv run fastapi dev main.py
+```
+
+### Run production server
+
+```bash
+uv run fastapi run main.py
 ```
 
 The example should run on http://127.0.0.1:8000
