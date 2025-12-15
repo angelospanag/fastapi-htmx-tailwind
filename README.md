@@ -18,10 +18,10 @@ Experimenting rendering tabs using FastAPI and HTMX.
 
 ### 1. Install runtimes
 
-**MacOS using brew**
+**macOS using brew**
 
 ```bash
-brew install python@3.13 uv node@22
+brew install python@3.14 oven-sh/bun/bun
 ```
 
 ### 2. Install Python dependencies
@@ -34,7 +34,7 @@ uv sync
 
 ```bash
 cd ui/static
-npm install
+bun install
 ```
 
 ## Run example
@@ -43,7 +43,7 @@ npm install
 
 ```bash
 cd ui/static
-npm run build:css
+bun run build:css
 ```
 
 ### Run development server

@@ -6,13 +6,13 @@ authors = [
 ]
 description = "Experimenting rendering tabs using FastAPI and HTMX"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.14"
 dependencies = [
-    "faker>=37.1.0",
-    "fastapi[standard]>=0.115.12",
+    "faker>=38.2.0",
+    "fastapi[standard]>=0.124.4",
     "jinja2>=3.1.6",
-    "polars>=1.27.1",
+    "polars>=1.36.1",
 ]
 
 [dependency-groups]
-dev = ["ruff>=0.11.6"]
+dev = ["ruff>=0.14.9"]
