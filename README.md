@@ -53,5 +53,6 @@ mise run dev         # starts the dev server on http://127.0.0.1:8000
 | `mise run fmt`         | Format code via `ruff format`            |
 | `mise run lint`        | Lint code via `ruff check`               |
 | `mise run typecheck`   | Type check via `ty check`                |
+| `mise run test`        | Run tests                                |
 | `mise run vuln`        | Audit deps for known vulnerabilities     |
 | `mise run deps`        | Update and sync Python dependencies      |
