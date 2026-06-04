@@ -1,61 +1,57 @@
 # fastapi-htmx-tailwind
 
-Experimenting rendering tabs using FastAPI and HTMX.
+Experimenting with rendering tabs using FastAPI and HTMX.
 
 <!-- TOC -->
 * [fastapi-htmx-tailwind](#fastapi-htmx-tailwind)
-  * [Prerequisites](#prerequisites)
-    * [1. Install runtimes](#1-install-runtimes)
-    * [2. Install Python dependencies](#2-install-python-dependencies)
-    * [3. Install Node dependencies](#3-install-node-dependencies)
-  * [Run example](#run-example)
-    * [Build CSS](#build-css)
-    * [Run development server](#run-development-server)
-    * [Run production server](#run-production-server)
+  * [Getting Started](#getting-started)
+  * [Development](#development)
 <!-- TOC -->
 
-## Prerequisites
+## Getting Started
 
-### 1. Install runtimes
+[`mise`](https://mise.jdx.dev/) manages the pinned toolchain (Python 3.14, uv, bun).
 
-**macOS using brew**
-
-```bash
-brew install python@3.14 oven-sh/bun/bun
-```
-
-### 2. Install Python dependencies
+**macOS / Linux**
 
 ```bash
-uv sync
+curl https://mise.run | sh
 ```
 
-### 3. Install Node dependencies
+**Windows**
 
 ```bash
-cd ui/static
-bun install
+winget install jdx.mise
 ```
 
-## Run example
-
-### Build CSS
+Activate mise in your shell so the pinned versions take precedence over any system installs (Homebrew, etc.). In `~/.zshrc`:
 
 ```bash
-cd ui/static
-bun run build:css
+eval "$(mise activate zsh)"
 ```
 
-### Run development server
+Then, in the repo:
 
 ```bash
-uv run fastapi dev main.py
+mise trust           # one-time, confirms you trust this repo's mise.toml
+mise install         # downloads and pins Python, uv, and bun
+mise run install     # installs Python dependencies into .venv
+mise run install:js  # installs JS dependencies
+mise run build:css   # compiles Tailwind CSS
+mise run dev         # starts the dev server on http://127.0.0.1:8000
 ```
 
-### Run production server
+## Development
 
-```bash
-uv run fastapi run main.py
-```
-
-The example should run on http://127.0.0.1:8000
+| Command                | Description                              |
+|------------------------|------------------------------------------|
+| `mise run install`     | Install Python dependencies into `.venv` |
+| `mise run install:js`  | Install JS dependencies                  |
+| `mise run dev`         | FastAPI dev server on 127.0.0.1:8000     |
+| `mise run serve`       | Production server on 0.0.0.0:8000        |
+| `mise run build:css`   | Compile Tailwind CSS                     |
+| `mise run fmt`         | Format code via `ruff format`            |
+| `mise run lint`        | Lint code via `ruff check`               |
+| `mise run typecheck`   | Type check via `ty check`                |
+| `mise run vuln`        | Audit deps for known vulnerabilities     |
+| `mise run deps`        | Update and sync Python dependencies      |

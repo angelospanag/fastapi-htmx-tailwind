@@ -1,0 +1,44 @@
+[tools]
+python = "3.14.5"
+uv = "0.11.19"
+bun = "1.3.14"
+
+[tasks.dev]
+description = "🚀 FastAPI dev server on 127.0.0.1:8000"
+run = "uv run fastapi dev main.py"
+
+[tasks.serve]
+description = "🚀 FastAPI production server on 0.0.0.0:8000"
+run = "uv run fastapi run main.py"
+
+[tasks.fmt]
+description = "✨ Format code with ruff"
+run = "uv run ruff format"
+
+[tasks.lint]
+description = "🔍 Lint code with ruff"
+run = "uv run ruff check"
+
+[tasks.typecheck]
+description = "🧐 Type check with ty"
+run = "uv run ty check main.py"
+
+[tasks.vuln]
+description = "🛡️ Audit dependencies for known vulnerabilities"
+run = "uv audit"
+
+[tasks.install]
+description = "📦 Install Python dependencies into .venv from lockfile"
+run = "uv sync"
+
+[tasks."install:js"]
+description = "📦 Install JS dependencies"
+run = "bun install --cwd ui/static"
+
+[tasks."build:css"]
+description = "🎨 Build Tailwind CSS"
+run = "bun run --cwd ui/static build:css"
+
+[tasks.deps]
+description = "📥 Update and sync Python dependencies"
+run = "uv sync -U"
