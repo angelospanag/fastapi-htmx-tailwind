@@ -39,6 +39,10 @@ run = "bun install --cwd ui/static"
 description = "🎨 Build Tailwind CSS"
 run = "bun run --cwd ui/static build:css"
 
+[tasks.test]
+description = "🧪 Run tests"
+run = "uv run pytest"
+
 [tasks.deps]
 description = "📥 Update and sync Python dependencies"
 run = "uv sync -U"
