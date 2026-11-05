@@ -10,7 +10,7 @@ Experimenting with rendering tabs using FastAPI and HTMX.
 
 ## Getting Started
 
-[`mise`](https://mise.jdx.dev/) manages the pinned toolchain (Python 3.14, uv, bun).
+[`mise`](https://mise.jdx.dev/) manages the pinned toolchain (Python 3.15, uv, bun).
 
 **macOS / Linux**
 
